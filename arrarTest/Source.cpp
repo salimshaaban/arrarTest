@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <cstring>
+#include<vector>
+
 using namespace std;
 #pragma warning (disable : 4996)
 
@@ -12,8 +14,6 @@ t Max(t a, t b)
     
     return a > b ? a : b;
 }
-
-
 
 
 void oneDArray()
@@ -794,6 +794,49 @@ void uppgiftOnsdagTredjeNov()
     cout << "Grade of student: " << s.grade() << endl;
 
 }
+
+
+void vector()
+{
+    vector<int> v1 = { 1, 2, 3, 4 };
+    //skriver ut den första indexet på vectorn
+    cout << v1.begin << endl;
+    //skriver ut den sista indexet på vecotrn
+    cout << v1.end << endl;
+    //Säger till oss hur stor vecotrn är
+    cout << v1.size() << endl;
+    //Säger till oss hur mycket vectorn kan innehålla
+    cout << v1.capacity << endl;
+    //Minskar vectorns storlek för och spara minne för vetorns capacity minskas inte av sig själv när man gör ändringar
+    v1.shrink_to_fit();
+    //Lägger till en "int" i slutet av vectorn
+    v1.push_back(10);
+    //tar bort en "int" från slutet av vectorn
+    v1.pop_back();
+    //Här lägger vi till 1 och 5 i början av vectorn
+    v1.insert(v1.begin() + 1, 5);
+
+}
+
+struct Person
+{
+    string name;
+    string surname;
+    int age;
+
+};
+
+void structVector()
+{
+    vector<Person> par1 = { { "johan", "karlson", 32 }, { "Sara", "Johansson", 22 } };
+    for (const auto par : par1)
+    {
+        cout << par.name << endl
+            << par.surname << endl
+            << par.age << endl;
+    }
+}
+
 
 
 
